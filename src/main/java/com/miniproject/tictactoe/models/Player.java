@@ -1,4 +1,4 @@
 package com.miniproject.tictactoe.models;
 
-public class Boards {
+public class Player {
 }
