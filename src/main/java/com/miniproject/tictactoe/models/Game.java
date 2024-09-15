@@ -27,6 +27,27 @@ public class Game {
     public static GameBuilder getBuilder(){
         return new GameBuilder();
     }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    public int getCurrPlayerIndex() {
+        return currPlayerIndex;
+    }
+
+    public List<Move> getMoves() {
+        return moves;
+    }
+
     public static class GameBuilder{
         private List<Player> players;
         private Board board ;
@@ -60,6 +81,8 @@ public class Game {
     // Build Game Obj //
 
         public Game build() throws InvalidGameConstructionException{
+            this.board  = new Board(this.players.size()+1);
+
             if(this.board == null){
                 throw new InvalidGameConstructionException("Board Could not be Empty");
             }
@@ -67,7 +90,6 @@ public class Game {
                 throw new InvalidGameConstructionException("Atleast two Player required");
             }
             // From here intilise board values //
-            this.board  = new Board(this.players.size()+1);
             return new Game(this);
         }
 

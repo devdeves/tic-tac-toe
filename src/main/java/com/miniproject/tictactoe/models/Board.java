@@ -14,4 +14,21 @@ public class Board {
             }
         }
     }
+
+    public void displayBoard(){
+        // TO do need to fix here //
+        //cells = 0 //
+        for(int i=0 ; i<cells.size() ; i++){
+            System.out.println("|");
+            for(int j=0; j<cells.size() ;j++){
+                Cell cell = cells.get(i).get(j);
+                if(cell.getCellState.equals(CellState.EMPTY)){
+                   System.out.println(" _ ");
+                }else{
+                    System.out.println(" " + cell.getPlayers().getSymbol() + " ");
+                };
+            }
+            System.out.println("|");
+        }
+    }
 }

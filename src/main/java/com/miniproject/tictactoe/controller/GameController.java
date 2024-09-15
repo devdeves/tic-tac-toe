@@ -1,6 +1,7 @@
 package com.miniproject.tictactoe.controller;
 
 import com.miniproject.tictactoe.exceptions.InvalidGameConstructionException;
+import com.miniproject.tictactoe.models.Board;
 import com.miniproject.tictactoe.models.Game;
 import com.miniproject.tictactoe.models.GameStatus;
 import com.miniproject.tictactoe.models.Player;
@@ -24,9 +25,14 @@ public class GameController {
     public void makeMove(){
 
     }
-    public GameStatus getGameStatus(){
-        return null;
+    public GameStatus getGameStatus(Game game){
+      return game.getGameStatus();
     }
+
+    public void displayBoard(Game game){
+         game.getBoard().displayBoard();
+    }
+
     public void undo(){
     }
     public void exitGame(){

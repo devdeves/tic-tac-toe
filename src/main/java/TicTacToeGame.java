@@ -1,5 +1,7 @@
 import com.miniproject.tictactoe.controller.GameController;
 import com.miniproject.tictactoe.models.Bot;
+import com.miniproject.tictactoe.models.Game;
+import com.miniproject.tictactoe.models.GameStatus;
 import com.miniproject.tictactoe.models.Player;
 
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 public class TicTacToeGame {
     private static GameController gameController = new GameController();
     public static void main(String[] args) {
+        // THIS set of code help in take I/P //
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many human players are going to play?");
         int numOfHumanPlayer = scanner.nextInt();
@@ -31,11 +34,20 @@ public class TicTacToeGame {
             //To DO write whole logic of bot
             players.add(new Bot("BOT 1",'b'));
         }
+        //---------------------INPUT SECTION ENDED ------------------------//
+
+        ///////////////////// ----- START LOGIC TO CREATE AND PLAY GAME ------- /////////////////
+        Game game ;
         try {
-            gameController.createGame(players);
+          game =  gameController.createGame(players);
         }catch (Exception e){
             System.out.println("Error while creating game: " + e.getMessage());
+            return;
         }
+
+//        while (gameController.getGameStatus(game).equals((GameStatus.IN_PROGRESS))){
+            gameController.displayBoard(game);
+//        }
 
     }
 
