@@ -1,4 +1,8 @@
 package com.miniproject.tictactoe.models;
 
-public class GameStatus {
+public enum GameStatus {
+    NOT_STARTED,
+    IN_PROGRESS,
+    DRAW ,
+    WON
 }

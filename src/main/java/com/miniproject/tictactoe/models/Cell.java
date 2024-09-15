@@ -22,7 +22,7 @@ public class Cell {
         this.row = row;
         this.col = col;
         this.cellState = cellState;
-        this.player = null;
+        this.players = null;
     }
 
 }
