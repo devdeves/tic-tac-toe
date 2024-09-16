@@ -12,21 +12,20 @@ public class Board {
             for(int j=0; j<dimension ;j++){
                 row.add(new Cell(i,j,CellState.EMPTY));
             }
+            cells.add(row);
         }
     }
 
     public void displayBoard(){
-        // TO do need to fix here //
-        //cells = 0 //
         for(int i=0 ; i<cells.size() ; i++){
-            System.out.println("|");
+            System.out.print("|");
             for(int j=0; j<cells.size() ;j++){
                 Cell cell = cells.get(i).get(j);
-                if(cell.getCellState.equals(CellState.EMPTY)){
-                   System.out.println(" _ ");
+                    if(cell.getCellState().equals(CellState.EMPTY)){
+                        System.out.print(" _ ");
                 }else{
-                    System.out.println(" " + cell.getPlayers().getSymbol() + " ");
-                };
+                    System.out.print(" " + cell.getPlayers().getSymbol() + " ");
+                }
             }
             System.out.println("|");
         }

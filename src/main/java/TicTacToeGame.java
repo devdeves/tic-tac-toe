@@ -1,8 +1,5 @@
 import com.miniproject.tictactoe.controller.GameController;
-import com.miniproject.tictactoe.models.Bot;
-import com.miniproject.tictactoe.models.Game;
-import com.miniproject.tictactoe.models.GameStatus;
-import com.miniproject.tictactoe.models.Player;
+import com.miniproject.tictactoe.models.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +29,7 @@ public class TicTacToeGame {
         if(botReply == 'y'){
             System.out.println("Choose Bot level ? (h/m/l)");
             //To DO write whole logic of bot
-            players.add(new Bot("BOT 1",'b'));
+            players.add(new Bot("BOT1",'b', BotsLevel.HIGH));
         }
         //---------------------INPUT SECTION ENDED ------------------------//
 
