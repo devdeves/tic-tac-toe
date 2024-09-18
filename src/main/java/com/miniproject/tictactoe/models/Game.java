@@ -3,6 +3,7 @@ package com.miniproject.tictactoe.models;
 import com.miniproject.tictactoe.exceptions.InvalidGameConstructionException;
 import com.miniproject.tictactoe.strategies.WinningStrategy;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Game {
@@ -24,6 +25,11 @@ public class Game {
        // this.strategy = new OrderNWinningStrategy();
     }
 
+    public void makeMoves(Player player ,int row ,int col) {
+        this.board.setPlayer(player,row,col);
+        this.currPlayerIndex++;
+    }
+
     public static GameBuilder getBuilder(){
         return new GameBuilder();
     }
@@ -40,8 +46,8 @@ public class Game {
         return gameStatus;
     }
 
-    public int getCurrPlayerIndex() {
-        return currPlayerIndex;
+    public Player getCurrentPlayer() {
+        return this.players.get(this.currPlayerIndex);
     }
 
     public List<Move> getMoves() {
@@ -54,6 +60,7 @@ public class Game {
         private GameStatus gameStatus;
         private int currPlayerIndex;
         private List<Move> moves;
+        private java.util.Collections Collections;
 
         // 'GameBuilder' in every function because using this chain the constructer //
 
@@ -78,10 +85,11 @@ public class Game {
             return this;
         }
 
-    // Build Game Obj //
+        // Build Game Obj //
 
         public Game build() throws InvalidGameConstructionException{
             this.board  = new Board(this.players.size()+1);
+            Collections.shuffle(this.players);
 
             if(this.board == null){
                 throw new InvalidGameConstructionException("Board Could not be Empty");
@@ -92,6 +100,7 @@ public class Game {
             // From here intilise board values //
             return new Game(this);
         }
+
 
 
 }

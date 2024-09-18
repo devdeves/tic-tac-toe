@@ -30,4 +30,8 @@ public class Board {
             System.out.println("|");
         }
     }
+
+    public void setPlayer(Player player ,int row ,int col){
+       this.cells.get(row).get(col).setPlayers(player);
+    }
 }

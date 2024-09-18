@@ -50,8 +50,17 @@ public class TicTacToeApplication {
         }
 
         while (gameController.getGameStatus(game).equals((GameStatus.IN_PROGRESS))){
+            // Collect all the I/P for game intilization //
             gameController.displayBoard(game);
-            break;
+
+            // Get current player object and implement moves logic //
+            Player player = gameController.getCurrentPlayer(game);
+            System.out.println(player.getName() + "'s turn ,Give row and column");
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+
+            gameController.makeMove(game ,player ,row,col);
+
         }
 
     }

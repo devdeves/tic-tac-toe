@@ -22,8 +22,8 @@ public class GameController {
 
 
 
-    public void makeMove(){
-
+    public void makeMove(Game game ,Player player,int row,int col){
+         game.makeMoves(player,row,col);
     }
     public GameStatus getGameStatus(Game game){
       return game.getGameStatus();
@@ -31,6 +31,9 @@ public class GameController {
 
     public void displayBoard(Game game){
          game.getBoard().displayBoard();
+    }
+    public Player getCurrentPlayer(Game game){
+        return game.getCurrentPlayer();
     }
 
     public void undo(){

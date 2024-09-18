@@ -35,8 +35,10 @@ public class Cell {
         return players;
     }
 
-    public void setPlayers(Player players) {
+    public Cell setPlayers(Player players) {
         this.players = players;
+        this.cellState = CellState.OCCUPIED;
+        return this;
     }
 
     public CellState getCellState() {
