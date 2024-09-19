@@ -60,6 +60,7 @@ public class TicTacToeApplication {
             int col = scanner.nextInt();
 
             gameController.makeMove(game ,player ,row,col);
+            break;
 
         }
 

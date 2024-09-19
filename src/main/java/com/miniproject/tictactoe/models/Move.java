@@ -3,6 +3,19 @@ package com.miniproject.tictactoe.models;
 import java.util.List;
 
 public class Move {
-    private List<Player> players;
-    private List<Cell> cells;
+    private Player player;
+    private Cell cell;
+
+    public Move(Player player, Cell cell) {
+        this.player = player;
+        this.cell = cell;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Cell getCell() {
+        return cell;
+    }
 }

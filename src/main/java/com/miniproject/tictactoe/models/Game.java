@@ -1,9 +1,7 @@
 package com.miniproject.tictactoe.models;
 
 import com.miniproject.tictactoe.exceptions.InvalidGameConstructionException;
-import com.miniproject.tictactoe.strategies.WinningStrategy;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Game {
@@ -27,6 +25,7 @@ public class Game {
 
     public void makeMoves(Player player ,int row ,int col) {
         this.board.setPlayer(player,row,col);
+
         this.currPlayerIndex++;
     }
 

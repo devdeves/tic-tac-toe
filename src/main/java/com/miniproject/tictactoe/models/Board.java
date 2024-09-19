@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
+    public List<List<Cell>> getCells() {
+        return cells;
+    }
+
     private List<List<Cell>> cells;
     public Board(int dimension){
         cells = new ArrayList<>();
